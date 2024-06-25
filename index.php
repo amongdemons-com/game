@@ -12,13 +12,13 @@ session_start();
     <meta name="author" content="Among Demons">
     <meta property="og:image" content="https://amongdemons.com/nfts/demons/faq/learnmore_founders_collection.png" />
 
-    <?php require_once("../data/parts/includes.php"); ?>
+    <?php require_once("data/parts/includes.php"); ?>
   </head>
   <body>
-    <?php require_once("../data/parts/nav.php"); ?>
+    <?php require_once("data/parts/nav.php"); ?>
     <main class="container">
       Hi
     </main>
-    <?php require_once("../data/parts/footer.php"); ?>
+    <?php require_once("data/parts/footer.php"); ?>
   </body>
 </html>
