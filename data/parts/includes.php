@@ -26,4 +26,6 @@ $stargazeUrlAll = "https://www.stargaze.zone/m/stars1mesfmezthl2r592gqs9zgamdkcr
 
 $stargazeAddress = "stars1mesfmezthl2r592gqs9zgamdkcr5q3rhf0vuzcaal2w8kza57yfqfn55tz";
 
+$folder = "/game";
+
 ?>
