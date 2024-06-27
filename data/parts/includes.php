@@ -28,4 +28,5 @@ $stargazeAddress = "stars1mesfmezthl2r592gqs9zgamdkcr5q3rhf0vuzcaal2w8kza57yfqfn
 
 $folder = "/game";
 
+require "functions.php";
 ?>

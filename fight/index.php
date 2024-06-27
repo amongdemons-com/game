@@ -1,5 +1,8 @@
 <?php 
 session_start();
+
+$myDemonID = 6;
+$enemyDemonID = 66;
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -18,45 +21,51 @@ session_start();
     <?php require_once("../data/parts/nav.php"); ?>
     <main class="container flex-fill">
       <div class="d-flex justify-content-center align-items-center">
-        <div class="card my-3" style="max-width: 50%;">
+        <div class="card my-3 flex-fill bg-dark-subtle">
           <div class="row g-0">
             <div class="col-md-6">
-              <img src="<?php echo $folder;?>/data/img/demons/1.png" class="img-fluid rounded-start" alt="Demon 1">
+              <img src="<?php echo $folder;?>/data/img/demons/<?php echo $myDemonID;?>.png" class="img-fluid rounded-start" alt="<?php echo ucfirst(getRarity($myDemonID))." ".getTypeName($myDemonID);?>" title="<?php echo ucfirst(getRarity($myDemonID))." ".getTypeName($myDemonID);?>">
             </div>
             <div class="col-md-6">
               <div class="card-body">
-                <h5 class="card-title">Boof Nitza</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Common</h6>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title"><?php echo getTypeName($myDemonID);?></h5>
+                <h6 class="card-subtitle mb-2 ad-<?php echo getRarity($myDemonID);?>"><?php echo ucfirst(getRarity($myDemonID));?></h6>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">An item</li>
                 <li class="list-group-item">A second item</li>
                 <li class="list-group-item">A third item</li>
               </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
             </div>
           </div>
         </div>
         <div class="px-2">VS</div>
-        <div class="card" style="width: 18rem;">
-          <img src="<?php echo $folder;?>/data/img/demons/1.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Common</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+        <div class="card my-3 flex-fill">
+          <div class="row g-0">
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo getTypeName($enemyDemonID);?></h5>
+                <h6 class="card-subtitle mb-2 ad-<?php echo getRarity($enemyDemonID);?>"><?php echo ucfirst(getRarity($enemyDemonID));?></h6>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img src="<?php echo $folder;?>/data/img/demons/<?php echo $enemyDemonID;?>.png" class="img-fluid rounded-end" alt="<?php echo ucfirst(getRarity($enemyDemonID))." ".getTypeName($enemyDemonID);?>" title="<?php echo ucfirst(getRarity($enemyDemonID))." ".getTypeName($enemyDemonID);?>">
+            </div>
           </div>
         </div>
       </div>

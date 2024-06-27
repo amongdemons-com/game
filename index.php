@@ -14,9 +14,9 @@ session_start();
 
     <?php require_once("data/parts/includes.php"); ?>
   </head>
-  <body>
+  <body class="d-flex flex-column">
     <?php require_once("data/parts/nav.php"); ?>
-    <main class="container">
+    <main class="container flex-fill">
       Hi
     </main>
     <?php require_once("data/parts/footer.php"); ?>
