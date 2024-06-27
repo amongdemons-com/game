@@ -25,7 +25,7 @@ function getRarity($i) {
 }
 
 function getTypeName($i) {
-  switch ($i/6) {
+  switch (ceil($i/6)) {
     case 1:
       return "Boof Nitza";
     case 2:

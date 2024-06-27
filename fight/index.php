@@ -2,7 +2,7 @@
 session_start();
 
 $myDemonID = 6;
-$enemyDemonID = 66;
+$enemyDemonID = 65;
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -19,9 +19,9 @@ $enemyDemonID = 66;
   </head>
   <body class="d-flex flex-column">
     <?php require_once("../data/parts/nav.php"); ?>
-    <main class="container flex-fill">
+    <main class="container flex-fill d-flex align-center">
       <div class="d-flex justify-content-center align-items-center">
-        <div class="card my-3 flex-fill bg-dark-subtle">
+        <div class="card my-3 flex-fill">
           <div class="row g-0">
             <div class="col-md-6">
               <img src="<?php echo $folder;?>/data/img/demons/<?php echo $myDemonID;?>.png" class="img-fluid rounded-start" alt="<?php echo ucfirst(getRarity($myDemonID))." ".getTypeName($myDemonID);?>" title="<?php echo ucfirst(getRarity($myDemonID))." ".getTypeName($myDemonID);?>">
@@ -30,7 +30,7 @@ $enemyDemonID = 66;
               <div class="card-body">
                 <h5 class="card-title"><?php echo getTypeName($myDemonID);?></h5>
                 <h6 class="card-subtitle mb-2 ad-<?php echo getRarity($myDemonID);?>"><?php echo ucfirst(getRarity($myDemonID));?></h6>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">This is a wider card with supporting text.</p>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">An item</li>
@@ -44,14 +44,14 @@ $enemyDemonID = 66;
             </div>
           </div>
         </div>
-        <div class="px-2">VS</div>
+        <div class="px-4">VS</div>
         <div class="card my-3 flex-fill">
           <div class="row g-0">
             <div class="col-md-6">
               <div class="card-body">
                 <h5 class="card-title"><?php echo getTypeName($enemyDemonID);?></h5>
                 <h6 class="card-subtitle mb-2 ad-<?php echo getRarity($enemyDemonID);?>"><?php echo ucfirst(getRarity($enemyDemonID));?></h6>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">This is a wider card with supporting text.</p>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">An item</li>
