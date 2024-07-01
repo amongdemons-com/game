@@ -4,3 +4,25 @@
 .fa-turd {
   opacity:.7;
 }
+
+/* Class to represent that the character is dead */
+.dead {
+  position: relative;
+}
+.dead img {
+  opacity: 0.5; /* Make the image semi-transparent */
+  filter: grayscale(100%); /* Convert the image to grayscale */
+}
+
+/* Optional: Add a 'X' mark or overlay to enhance the effect */
+.dead::after {
+  content: '✖';
+  color: #DA3344;
+  font-size: 75px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
