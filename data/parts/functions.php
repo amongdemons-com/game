@@ -1,4 +1,28 @@
 <?php 
+function getMyDemon() {
+  $id=6;
+  return getDemonByID($id);
+}
+
+function getDemonByID($id) {
+  $demon = [];
+  $demon["id"]=$id;
+  $demon["model"]=$id;
+
+  // demon type
+  $demon["name"]=getTypeName($demon["model"]);
+  $demon["rarity"]=getRarity($demon["model"]);
+
+  // stats
+  $demon["level"]=12;
+  $demon["attack"]=5;
+  $demon["defense"]=22;
+  $demon["hp"]=26;
+  $demon["maxhp"]=100;
+
+  return $demon;
+}
+
 function getRarity($i) {
   switch ($i%6) {
     case 1:
