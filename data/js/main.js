@@ -12,7 +12,9 @@ function fightEnemyDemon() {
     // do server call then modify stats
 
     hitEnemyDemon(5);
-    getHitByDemon(1);
+    setTimeout(function() {
+        getHitByDemon(1);
+    }, 300); 
 }
 
 function hitEnemyDemon(damage) {
@@ -26,10 +28,14 @@ function hitEnemyDemon(damage) {
      var newPercentage = 100 * $('#enemyDemon .hp').html() / $('#enemyDemon .maxhp').html();
      $('#enemyDemon .progress div').addClass("bg-warning").css({width: newPercentage+"%"});
  
-     setTimeout(function() {
-         $('#enemyDemon .hp').removeClass("text-warning");
-         $('#enemyDemon .progress div').removeClass("bg-warning");
-     }, 200);
+    // Add shake effect
+    $('#enemyDemon').addClass('shake');
+
+    setTimeout(function() {
+        $('#enemyDemon .hp').removeClass("text-warning");
+        $('#enemyDemon .progress div').removeClass("bg-warning");
+        $('#enemyDemon').removeClass('shake');
+    }, 200);
 }
 
 function getHitByDemon(damage) {
@@ -43,8 +49,12 @@ function getHitByDemon(damage) {
      var newPercentage = 100 * $('#myDemon .hp').html() / $('#myDemon .maxhp').html();
      $('#myDemon .progress div').addClass("bg-warning").css({width: newPercentage+"%"});
  
-     setTimeout(function() {
-         $('#myDemon .hp').removeClass("text-warning");
-         $('#myDemon .progress div').removeClass("bg-warning");
-     }, 200);
+    // Add shake effect
+    $('#myDemon').addClass('shake');
+
+    setTimeout(function() {
+        $('#myDemon .hp').removeClass("text-warning");
+        $('#myDemon .progress div').removeClass("bg-warning");
+        $('#myDemon').removeClass('shake');
+    }, 200);
 }
