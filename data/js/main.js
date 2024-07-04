@@ -23,10 +23,17 @@ function hitEnemyDemon(damage) {
     // update enemy demon UI stats
     var newHp = $('#enemyDemon .hp').html();
     newHp = (newHp>=damage)?newHp - damage:0;
-     $('#enemyDemon .hp').addClass("text-warning").html(newHp);
 
-     var newPercentage = 100 * $('#enemyDemon .hp').html() / $('#enemyDemon .maxhp').html();
-     $('#enemyDemon .progress div').addClass("bg-warning").css({width: newPercentage+"%"});
+    // disable button if dead
+    if (!newHp) {
+        $('#enemyDemon').addClass('dead');
+        $('#fight').fadeOut(0);
+    }
+
+    $('#enemyDemon .hp').addClass("text-warning").html(newHp);
+
+    var newPercentage = 100 * $('#enemyDemon .hp').html() / $('#enemyDemon .maxhp').html();
+    $('#enemyDemon .progress div').addClass("bg-warning").css({width: newPercentage+"%"});
  
     // Add shake effect
     $('#enemyDemon').addClass('shake');
@@ -44,10 +51,17 @@ function getHitByDemon(damage) {
     // update my demon UI stats
     var newHp = $('#myDemon .hp').html();
     newHp = (newHp>=damage)?newHp - damage:0;
-     $('#myDemon .hp').addClass("text-warning").html(newHp);
 
-     var newPercentage = 100 * $('#myDemon .hp').html() / $('#myDemon .maxhp').html();
-     $('#myDemon .progress div').addClass("bg-warning").css({width: newPercentage+"%"});
+    // disable button if dead
+    if (!newHp) {
+        $('#myDemon').addClass('dead');
+        $('#run').fadeOut(0);
+    }
+
+    $('#myDemon .hp').addClass("text-warning").html(newHp);
+
+    var newPercentage = 100 * $('#myDemon .hp').html() / $('#myDemon .maxhp').html();
+    $('#myDemon .progress div').addClass("bg-warning").css({width: newPercentage+"%"});
  
     // Add shake effect
     $('#myDemon').addClass('shake');

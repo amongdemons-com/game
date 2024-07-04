@@ -6,16 +6,16 @@
 }
 
 /* Class to represent that the character is dead */
-.dead {
-  position: relative;
-}
-.dead img {
+.dead img, .dead .info {
   opacity: 0.5; /* Make the image semi-transparent */
   filter: grayscale(100%); /* Convert the image to grayscale */
 }
 
-/* Optional: Add a 'X' mark or overlay to enhance the effect */
-.dead::after {
+/* Add a 'X' mark or overlay to enhance the effect */
+.dead .model {
+  position: relative;
+}
+.dead .model::after {
   content: '✖';
   color: #DA3344;
   font-size: 75px;

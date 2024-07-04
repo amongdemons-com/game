@@ -27,10 +27,10 @@ $enemyDemon = getDemonByID(65);
       <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
         <div class="card my-3 flex-md-fill bg-dark-subtle" id="myDemon">
           <div class="row g-0">
-            <div class="col-6">
+            <div class="col-6 model">
               <img src="<?php echo $folder;?>/data/img/demons/<?php echo $myDemon["model"];?>.png" class="img-fluid rounded-start" alt="<?php echo ucfirst($myDemon["rarity"])." ".$myDemon["name"];?>" title="<?php echo ucfirst($myDemon["rarity"])." ".$myDemon["name"];?>">
             </div>
-            <div class="col-6 d-flex flex-column">
+            <div class="col-6 d-flex flex-column info">
               <div class="card-body flex-fill">
                 <h5 class="card-title">
                   <?php echo $myDemon["name"];?>
@@ -62,7 +62,7 @@ $enemyDemon = getDemonByID(65);
                 <li class="list-group-item bg-dark-subtle"></li>
               </ul>
               <div class="px-3 pb-3 text-center">
-                <button type="button" class="btn btn-success btn-sm py-1 ps-2 pe-2">
+                <button type="button" class="btn btn-success btn-sm py-1 ps-2 pe-2" id="run">
                   Run
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 448 512" class="ms-1"><defs></defs><path class="fa-turd" d="M64 352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V352z"/><path class="fa-primary" d="M32 0C49.7 0 64 14.3 64 32V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V32C0 14.3 14.3 0 32 0z"/></svg>
                 </button>
@@ -73,7 +73,7 @@ $enemyDemon = getDemonByID(65);
         <div class="px-4">VS</div>
         <div class="card my-3 flex-md-fill bg-dark-subtle" id="enemyDemon">
           <div class="row g-0">
-            <div class="col-6 d-flex flex-column">
+            <div class="col-6 d-flex flex-column info">
               <div class="card-body flex-fill">
                 <h5 class="card-title">
                   <?php echo $enemyDemon["name"];?>
@@ -111,7 +111,7 @@ $enemyDemon = getDemonByID(65);
                 </button>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 model">
               <img src="<?php echo $folder;?>/data/img/demons/<?php echo $enemyDemon["model"];?>.png" class="img-fluid rounded-end" alt="<?php echo ucfirst($enemyDemon["rarity"])." ".$enemyDemon["name"];?>" title="<?php echo ucfirst($enemyDemon["rarity"])." ".$enemyDemon["name"];?>">
             </div>
           </div>
