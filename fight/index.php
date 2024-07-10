@@ -23,7 +23,7 @@ $enemyDemon = getDemonByID(65);
   </head>
   <body class="d-flex flex-column">
     <?php require_once("../data/parts/nav.php"); ?>
-    <main class="container flex-fill d-flex flex-column align-center">
+    <main class="container flex-fill d-flex flex-column align-center vh-100 overflow-hidden">
       <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
         <div class="card my-3 flex-md-fill bg-dark-subtle" id="myDemon">
           <div class="row g-0">
@@ -118,9 +118,17 @@ $enemyDemon = getDemonByID(65);
         </div>
       </div>
 
-      <div class="align-center w-50 mx-auto">
-        <h5 class="text-center py-1">Combat Log</h5>
-        <ul id="combatHistory" class="list-group list-group-flush">
+      <div class="card w-50 mx-auto d-flex flex-column overflow-hidden">
+        <div class="card-header text-center">
+          Combat Log
+        </div>
+        <ul id="combatHistory" class="list-group list-group-flush overflow-y-scroll ">
+          <li class="list-group-item">
+            There's a 
+            <span class="ad-<?php echo $enemyDemon["rarity"];?>"><?php echo ucfirst($enemyDemon["rarity"]);?></span>
+            <?php echo $enemyDemon["name"];?> 
+            in front of you.
+          </li>
         </ul>
       </div>
     </main>

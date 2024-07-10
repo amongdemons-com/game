@@ -45,3 +45,10 @@
   animation: shake 0.2s;
   animation-iteration-count: 1;
 }
+
+.player-hit {
+  background: #283528;
+}
+.enemy-hit {
+  background: #473d23;
+}

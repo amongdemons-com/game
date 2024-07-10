@@ -18,7 +18,7 @@ function fightEnemyDemon() {
 }
 
 function hitEnemyDemon(damage) {
-    addCombatLog('You did '+damage+' damage.');
+    addCombatLog('player-hit', damage);
 
     // update enemy demon UI stats
     var newHp = $('#enemyDemon .hp').html();
@@ -28,7 +28,7 @@ function hitEnemyDemon(damage) {
     if (!newHp) {
         $('#enemyDemon').addClass('dead');
         $('#fight').fadeOut(0);
-        addCombatLog('Enemy demon died.');
+        addCombatLog('enemy-death');
     }
 
     $('#enemyDemon .hp').addClass("text-warning").html(newHp);
@@ -47,7 +47,7 @@ function hitEnemyDemon(damage) {
 }
 
 function getHitByDemon(damage) {
-    addCombatLog('Enemy hit for '+damage+' damage.');
+    addCombatLog('enemy-hit', damage);
 
     // update my demon UI stats
     var newHp = $('#myDemon .hp').html();
@@ -57,7 +57,7 @@ function getHitByDemon(damage) {
     if (!newHp) {
         $('#myDemon').addClass('dead');
         $('#run').fadeOut(0);
-        addCombatLog('Your demon died.');
+        addCombatLog('player-death');
     }
 
     $('#myDemon .hp').addClass("text-warning").html(newHp);
@@ -75,7 +75,32 @@ function getHitByDemon(damage) {
     }, 200);
 }
 
-function addCombatLog(message, type) {
-    console.log(message);
-    $("#combatHistory").append('<li class="list-group-item '+type+'">'+message+'</li>');
+function addCombatLog(type, amount) {
+    console.log(type + ' : ' + amount);
+
+    liclass = '';
+    message = '';
+    switch(type) {
+    case 'enemy-hit':
+        message = 'Enemy hit for <span>'+amount+'</span> damage.';
+        liclass = "enemy-hit text-end";
+        break;
+    case 'enemy-death':
+        message = 'Enemy demon died.';
+        liclass = 'text-end';
+        break;
+    case 'player-hit':
+        message = 'You did <span>'+amount+'</span> damage.';
+        liclass = "player-hit";
+        break;
+    case 'player-death':
+        message = 'Your demon died.';
+        liclass = '';
+        break;
+    }
+
+    $("#combatHistory").append('<li class="list-group-item '+liclass+'">'+message+'</li>');
+
+    // Scroll to the bottom
+    $('#combatHistory').scrollTop($('#combatHistory')[0].scrollHeight);
 }
