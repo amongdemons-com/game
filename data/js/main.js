@@ -18,7 +18,7 @@ function fightEnemyDemon() {
 }
 
 function hitEnemyDemon(damage) {
-    console.log("action: you did "+damage+" damage");
+    addCombatLog('You did '+damage+' damage.');
 
     // update enemy demon UI stats
     var newHp = $('#enemyDemon .hp').html();
@@ -28,6 +28,7 @@ function hitEnemyDemon(damage) {
     if (!newHp) {
         $('#enemyDemon').addClass('dead');
         $('#fight').fadeOut(0);
+        addCombatLog('Enemy demon died.');
     }
 
     $('#enemyDemon .hp').addClass("text-warning").html(newHp);
@@ -46,7 +47,7 @@ function hitEnemyDemon(damage) {
 }
 
 function getHitByDemon(damage) {
-    console.log("action: enemy hit for "+damage+" damage");
+    addCombatLog('Enemy hit for '+damage+' damage.');
 
     // update my demon UI stats
     var newHp = $('#myDemon .hp').html();
@@ -56,6 +57,7 @@ function getHitByDemon(damage) {
     if (!newHp) {
         $('#myDemon').addClass('dead');
         $('#run').fadeOut(0);
+        addCombatLog('Your demon died.');
     }
 
     $('#myDemon .hp').addClass("text-warning").html(newHp);
@@ -71,4 +73,9 @@ function getHitByDemon(damage) {
         $('#myDemon .progress div').removeClass("bg-warning");
         $('#myDemon').removeClass('shake');
     }, 200);
+}
+
+function addCombatLog(message, type) {
+    console.log(message);
+    $("#combatHistory").append('<li class="list-group-item '+type+'">'+message+'</li>');
 }

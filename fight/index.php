@@ -23,7 +23,7 @@ $enemyDemon = getDemonByID(65);
   </head>
   <body class="d-flex flex-column">
     <?php require_once("../data/parts/nav.php"); ?>
-    <main class="container flex-fill d-flex align-center">
+    <main class="container flex-fill d-flex flex-column align-center">
       <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
         <div class="card my-3 flex-md-fill bg-dark-subtle" id="myDemon">
           <div class="row g-0">
@@ -116,6 +116,12 @@ $enemyDemon = getDemonByID(65);
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="align-center w-50 mx-auto">
+        <h5 class="text-center py-1">Combat Log</h5>
+        <ul id="combatHistory" class="list-group list-group-flush">
+        </ul>
       </div>
     </main>
     <?php require_once("../data/parts/footer.php"); ?>
