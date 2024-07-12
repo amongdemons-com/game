@@ -11,10 +11,11 @@ function fightEnemyDemon() {
 
     // do server call then modify stats
 
-    hitEnemyDemon(5);
-    setTimeout(function() {
-        getHitByDemon(1);
-    }, 300); 
+    if (hitEnemyDemon(50)) {
+        setTimeout(function() {
+            getHitByDemon(1);
+        }, 300);
+    }
 }
 
 function hitEnemyDemon(damage) {
@@ -27,7 +28,7 @@ function hitEnemyDemon(damage) {
     // disable button if dead
     if (!newHp) {
         $('#enemyDemon').addClass('dead');
-        $('#fight').fadeOut(0);
+        $('#fight').attr('disabled', 'disabled');
         addCombatLog('enemy-death');
     }
 
@@ -44,6 +45,8 @@ function hitEnemyDemon(damage) {
         $('#enemyDemon .progress div').removeClass("bg-warning");
         $('#enemyDemon').removeClass('shake');
     }, 200);
+
+    return newHp;
 }
 
 function getHitByDemon(damage) {
@@ -56,7 +59,7 @@ function getHitByDemon(damage) {
     // disable button if dead
     if (!newHp) {
         $('#myDemon').addClass('dead');
-        $('#run').fadeOut(0);
+        $('#run').attr('disabled', 'disabled');
         addCombatLog('player-death');
     }
 
@@ -73,6 +76,8 @@ function getHitByDemon(damage) {
         $('#myDemon .progress div').removeClass("bg-warning");
         $('#myDemon').removeClass('shake');
     }, 200);
+
+    return newHp;
 }
 
 function addCombatLog(type, amount) {
