@@ -1,6 +1,6 @@
 <?php 
 function getMyDemon() {
-  $id=6;
+  $id=53;
   return getDemonByID($id);
 }
 
