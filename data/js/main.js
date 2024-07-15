@@ -11,7 +11,7 @@ function fightEnemyDemon() {
 
     // do server call then modify stats
 
-    if (hitEnemyDemon(50)) {
+    if (hitEnemyDemon(5)) {
         setTimeout(function() {
             getHitByDemon(1);
         }, 300);
